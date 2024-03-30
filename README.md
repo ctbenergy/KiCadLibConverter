@@ -6,7 +6,7 @@ Devcontainer for [easyeda2kicad](https://github.com/uPesy/easyeda2kicad.py) and 
 
 [easyeda2kicad](https://github.com/uPesy/easyeda2kicad.py)
 
-A Python script that converts any electronic components from EasyEDA or LCSC to a Kicad library including 3D model in color. T
+A Python script that converts any electronic components from EasyEDA or LCSC to a Kicad library including 3D model in color.
 
 ### Usage
 
@@ -49,6 +49,8 @@ For output folder see devcontainer.json mounts.
 ## JLC2KiCad_Lib
 
 [JLC2KiCad_lib](https://github.com/TousstNicolas/JLC2KiCad_lib)
+
+JLC2KiCadLib is a python script that generate a component library (symbol, footprint and 3D model) for KiCad from the JLCPCB/easyEDA library.
 
 ### Usage
 
