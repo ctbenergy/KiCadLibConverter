@@ -1,0 +1,60 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// Developing inside a Container https://code.visualstudio.com/docs/devcontainers/containers
+// Create a Dev Container https://code.visualstudio.com/docs/devcontainers/create-dev-container
+// Available Dev Container Templates https://containers.dev/templates
+// https://github.com/devcontainers/templates/blob/main/src/python/devcontainer-template.json
+{
+    // Develop Python 3 applications.
+    // README at: https://github.com/devcontainers/images/tree/main/src/python
+    // Template README at: https://github.com/devcontainers/templates/tree/main/src/python
+    // Template at: https://github.com/devcontainers/templates/blob/main/src/python/devcontainer-template.json
+
+	"name": "Python 3",
+	//"image": "mcr.microsoft.com/devcontainers/python:1-${templateOption:imageVariant}"
+
+    // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			// Update 'VARIANT' to pick a Python version: 3, 3.12, 3.11, 3.10, 3.9, 3.8
+			// Append -bookworm or -bullseye or -buster to pin to an OS version.
+			"VARIANT": "3.9-bookworm",
+			// Options
+			"NODE_VERSION": "lts/*"
+		}
+	},
+
+    // Features to add to the dev container. More info: https://containers.dev/features.
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    //"forwardPorts": [],
+
+    // Use 'postCreateCommand' to run commands after the container is created.
+    //"postCreateCommand": "pip3 install -r requirements.txt",
+
+    // Configure tool-specific properties.
+    "customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            // Set *default* container specific settings.json values on container create.
+            "settings": {
+                "python.defaultInterpreterPath": "/usr/local/bin/python"
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance"
+            ]
+        }
+    },
+
+    // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+    // "remoteUser": "root",
+
+    // Add another local file mount
+    "mounts": [
+        "source=${localEnv:USERPROFILE}/Documents/Kicad/KiCadLibConverter/Libraries,target=/home/vscode/Documents/Kicad,type=bind,consistency=cached"
+    ]
+}

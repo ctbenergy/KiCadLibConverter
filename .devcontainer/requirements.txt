@@ -1,0 +1,2 @@
+JLC2KiCadLib
+easyeda2kicad
